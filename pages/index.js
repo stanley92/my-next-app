@@ -3,6 +3,13 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
+  useEffect(() => {
+    fetch("https://iam-service.vercel.app/api/auth/session")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+  }, []);
   return (
     <div className={styles.container}>
       <Head>
